@@ -16,22 +16,26 @@ increase_button.addEventListener('click', (e) => {
     console.log("Click `increase`")
     increase()
 })
+increase_button.addEventListener('touchstart', increase)
+
 
 decrease_button.addEventListener('click', function() {
     console.log("Click `decrease`")
     decrease()
 })
+decrease_button.addEventListener('touchstart', decrease)
 
 reset_button.addEventListener('click', () => {
     console.log("Click `reset`")
     reset()
 })
+reset_button.addEventListener('touchstart', reset)
 // 使用了函数默认值
-function increase(change = 5) {
+function increase(change = 10) {
     curr_color = setHue(curr_color, change)
     root.style.setProperty("--color", curr_color)
 }
-function decrease(change = -5) {
+function decrease(change = -10) {
     curr_color = setHue(curr_color, change)
     root.style.setProperty("--color", curr_color)
 }
@@ -51,6 +55,7 @@ function setHue(curr_color, change) {
     hue = curr_color.match(/(?<=\().+?(?=,)/)[0]
     // 为什么我们要在这里判断change是不是数字呢
     if (change !== parseInt(change)) {
+        // TODO: 在手机上会报错，原因不明
         throw new Error('change值不是整数')
     }
     // TODO: 使用以前的颜色，而不是魔法值
