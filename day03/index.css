@@ -1,0 +1,29 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+:root {
+    --color: hsl(184, 47%, 37%);
+}
+
+body {
+    background-color: var(--color);
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    padding: 3rem;
+    margin: auto;
+}
+button {
+    margin: 1rem;
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    opacity: 0.4;
+}
