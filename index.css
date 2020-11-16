@@ -1,32 +1,47 @@
 :root {
-    --light-bg-color: #eeeeee;
-    --light-primary-color: #103749;
-    --dark-bg-color: #04102c;
-    --dark-primary-color: #b9c47d;
+  --light-bg-color: #eeeeee;
+  --light-primary-color: #103749;
+  --dark-bg-color: #04102c;
+  --dark-primary-color: #b9c47d;
 }
-html, body {
-    padding: 0;
-    margin: 0;
+html {
+  height: 100vh;
+}
+/* 样式重制 */
+html,
+body,
+h1 {
+  margin: 0;
+  padding: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 body {
-    height: 100%;
-    padding: 30px;
-    background-color: var(--light-bg-color);
-    color: var(--light-primary-color);
+  overflow: hidden;
+  height: 100%;
+  padding: 30px;
+  background-color: var(--light-bg-color);
+  color: var(--light-primary-color);
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
 }
-@media(prefers-color-scheme: dark) {
-    body {
-        background-color: var(--dark-bg-color);
-        color: var(--dark-primary-color);
-    }
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-primary-color);
+  }
 }
-li {
-    margin: 1rem;
+ul li {
+  margin: 1rem;
+}
+
+ul {
+  padding: 0;
 }
